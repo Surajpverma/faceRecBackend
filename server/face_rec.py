@@ -3,6 +3,7 @@ import os
 import cv2
 import numpy as np
 
+# Function to extract face data from dataset
 def get_encoded_faces():
     encoded = {}
 
@@ -14,6 +15,7 @@ def get_encoded_faces():
                 encoded[f.split(".")[0]] = encoding
     return encoded
 
+# Function to be called from main.py file
 def classify_faces(img):
     faces = get_encoded_faces()
     faces_encoded = list(faces.values())

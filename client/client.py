@@ -9,8 +9,12 @@ def string_to_image(base64_string):
     imgdata = base64.b64decode(base64_string)
     return np.array(Image.open(io.BytesIO(imgdata)))
 
-url = 'http://127.0.0.1:5000/classify-faces'
-my_img = {'image': open('1.png', 'rb')}
+url = 'http://127.0.0.1:5000/classify-faces' 
+# Replace above link with deployed server link
+
+my_img = {'image': open('Suraj.png', 'rb')}
+# Replace Test-1.png with your image path
+
 req = requests.post(url, files=my_img)
 
 img_str = req.json().get("image").split('\'')[1]
